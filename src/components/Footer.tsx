@@ -7,7 +7,10 @@ export const Footer: FC<Props> = ({activeCount, todos, onClearCompleted}): void 
         <strong>{todos.length}</strong> tareas pendientes.
       </span>
 
-      
+      <Filters
+        filterSelected={}
+        onFilterSelected={}
+      />
     </footer>
   )
 }
