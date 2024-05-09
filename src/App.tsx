@@ -30,14 +30,14 @@ const App = (): JSX.Element => {
   }
 
   const handleCompleteTodo = ( {id, completed}: Pick<TodoType, 'id' | 'completed'> ): void => {
-    const newTodos = todos.filter(todo => {
+    const newTodos = todos.map(todo => {
       if(todo.id === id ){
         return {
           ...todo,
-          completed: !completed
+          completed
         }
       }
-      return
+      return todo
     })
     setTodos(newTodos)
   }
