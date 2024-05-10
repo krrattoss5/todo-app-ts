@@ -1,6 +1,7 @@
 import { type FC } from 'react'
+import { Filters } from './Filters'
 
-export const Footer: FC<Props> = ({activeCount, todos, onClearCompleted}): void => {
+export const Footer: FC<Props> = ({activeCount, todos, onClearCompleted}) => {
   return (
     <footer className='footer'>
       <span className="todo-count">
@@ -9,7 +10,7 @@ export const Footer: FC<Props> = ({activeCount, todos, onClearCompleted}): void 
 
       <Filters
         filterSelected={}
-        onFilterSelected={}
+        onFilterSelected={() => {}}
       />
     </footer>
   )
