@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Todos } from "./components/Todos"
-import { FILTER_VALUES, type TodoId, type Todo as TodoType } from "./types"
+import { FILTER_VALUES, TodoTitle, type TodoId, type Todo as TodoType } from "./types"
 import { TODO_FILTERS } from "./consts"
 import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
@@ -64,9 +64,20 @@ const App = (): JSX.Element => {
     setTodos(newTodos)
   }
 
+  const handleAddTodo = ({title}: TodoTitle): void => {
+    const newTodo = {
+      id: crypto.randomUUID(),
+      title:title,
+      completed:false
+    }
+
+    const newTodos = ([...todos, newTodo])
+    title.length > 0 && setTodos(newTodos)
+  }
+
   return (
     <div className="todoapp">
-      <Header />
+      <Header onAddTodo={handleAddTodo}/>
       <Todos
         todos={filteredTodos}
         onRemoveTodo={handleRemove}
