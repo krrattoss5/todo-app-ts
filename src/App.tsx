@@ -63,9 +63,10 @@ const App = (): JSX.Element => {
     const newTodos = todos.filter(todo => !todo.completed)
     setTodos(newTodos)
   }
+
   return (
     <div className="todoapp">
-      <Header/>
+      <Header />
       <Todos
         todos={filteredTodos}
         onRemoveTodo={handleRemove}
