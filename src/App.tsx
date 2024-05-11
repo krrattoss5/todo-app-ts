@@ -3,6 +3,7 @@ import { Todos } from "./components/Todos"
 import { FILTER_VALUES, type TodoId, type Todo as TodoType } from "./types"
 import { TODO_FILTERS } from "./consts"
 import { Footer } from "./components/Footer"
+import { Header } from "./components/Header"
 
 const mockTodos = [
   {
@@ -64,6 +65,7 @@ const App = (): JSX.Element => {
   }
   return (
     <div className="todoapp">
+      <Header/>
       <Todos
         todos={filteredTodos}
         onRemoveTodo={handleRemove}
